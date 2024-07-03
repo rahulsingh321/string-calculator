@@ -36,4 +36,11 @@ class StringCalculatorTest < Minitest::Test
     end
     assert_equal "negative numbers not allowed: -2", error.message
   end
+
+  def test_multiple_negative_numbers_throw_exception
+    error = assert_raises RuntimeError do
+      @calculator.add("1,-2,-3")
+    end
+    assert_equal "negative numbers not allowed: -2, -3", error.message
+  end
 end
