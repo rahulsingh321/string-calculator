@@ -54,3 +54,27 @@ Description: Ignores numbers greater than 1000.
 Method: get_call_count()
 Description: Returns the number of times the add method was invoked.
 ```
+
+### Installation
+1. Ensure Ruby is Installed:
+
+You need Ruby installed on your system to run the String Calculator. You can check if Ruby is installed by running:
+```
+ruby -v
+```
+If Ruby is not installed, you can download and install it from https://www.ruby-lang.org/.
+
+2. Clone the repository:
+```
+git clone https://github.com/rahulsingh321/string-calculator.git
+```
+3. Navigate into the project directory:
+```
+cd string-calculator
+```
+
+### Usage
+1. Run the Tests:
+```
+ruby string_calculator_test.rb
+```
