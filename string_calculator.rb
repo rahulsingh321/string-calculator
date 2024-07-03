@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# String calculator
 class StringCalculator
   def initialize
     @call_count = 0
@@ -8,9 +11,7 @@ class StringCalculator
     return 0 if numbers.empty?
 
     delimiter = ','
-    if numbers.start_with?('//')
-      delimiter, numbers = parse_custom_delimiter(numbers)
-    end
+    delimiter, numbers = parse_custom_delimiter(numbers) if numbers.start_with?('//')
 
     numbers   = numbers.gsub("\n", delimiter)
     nums      = numbers.split(delimiter).map(&:to_i)
@@ -18,10 +19,8 @@ class StringCalculator
     # Ignore numbers greater than 1000
     nums.reject! { |n| n > 1000 }
 
-    negatives = nums.select { |n| n < 0 }
-    if negatives.any?
-      raise "negative numbers not allowed: #{negatives.join(', ')}"
-    end
+    negatives = nums.select(&:negative?)
+    raise "negative numbers not allowed: #{negatives.join(', ')}" if negatives.any?
 
     nums.sum
   end
