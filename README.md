@@ -51,7 +51,7 @@ Description: Ignores numbers greater than 1000.
 ```
 ### Get Call Count
 ```
-Method: get_call_count()
+Method: get_called_count
 Description: Returns the number of times the add method was invoked.
 ```
 
