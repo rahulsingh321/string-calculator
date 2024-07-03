@@ -55,4 +55,10 @@ class StringCalculatorTest < Minitest::Test
     @calculator.add("4,5")
     assert_equal 2, @calculator.get_called_count
   end
+
+  def test_ignore_numbers_greater_than_1000
+    assert_equal 9, @calculator.add("2,1001,1002,3,4")
+    assert_equal 2, @calculator.add("1001,2")
+    assert_equal 0, @calculator.add("1001,1002")
+  end
 end
