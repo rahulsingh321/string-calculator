@@ -43,4 +43,12 @@ class StringCalculatorTest < Minitest::Test
     end
     assert_equal "negative numbers not allowed: -2, -3", error.message
   end
+
+  def test_get_called_count
+    assert_equal 0, @calculator.get_called_count
+    @calculator.add("1,2,3")
+    assert_equal 1, @calculator.get_called_count
+    @calculator.add("4,5")
+    assert_equal 2, @calculator.get_called_count
+  end
 end
