@@ -21,4 +21,8 @@ class StringCalculatorTest < Minitest::Test
   def test_multiple_numbers_comma_delimited
     assert_equal 10, @calculator.add("1,2,3,4")
   end
+
+  def test_newlines_between_numbers
+    assert_equal 6, @calculator.add("1\n2,3")
+  end
 end
