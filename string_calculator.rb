@@ -1,3 +1,5 @@
 class StringCalculator
-  def add(string_numbers); end
+  def add(numbers)
+    return 0 if numbers.empty?
+  end
 end
