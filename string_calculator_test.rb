@@ -30,6 +30,10 @@ class StringCalculatorTest < Minitest::Test
     assert_equal 3, @calculator.add("//;\n1;2")
   end
 
+  def test_many_numbers_custom_delimiter
+    assert_equal 15, @calculator.add("//|\n1|2|3|4|5")
+  end
+
   def test_negative_numbers_throw_exception
     error = assert_raises RuntimeError do
       @calculator.add("1,-2,3")
