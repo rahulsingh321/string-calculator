@@ -25,7 +25,7 @@ class StringCalculator
     nums.sum
   end
 
-  def get_called_count
+  def called_count
     @call_count
   end
 
