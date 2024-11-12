@@ -34,6 +34,11 @@ class StringCalculatorTest < Minitest::Test
     assert_equal 15, @calculator.add("//|\n1|2|3|4|5")
   end
 
+  def test_delimiters_of_any_length
+    assert_equal 6, @calculator.add("//***\n1***2***3")
+    assert_equal 10, @calculator.add("//$$$$\n1$$$$2$$$$3$$$$4")
+  end
+
   def test_negative_numbers_throw_exception
     error = assert_raises RuntimeError do
       @calculator.add("1,-2,3")
